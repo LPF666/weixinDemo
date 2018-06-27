@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="2.5" 
+	xmlns="http://java.sun.com/xml/ns/javaee" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee 
+	http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
+  <welcome-file-list>
+    <welcome-file>index.jsp</welcome-file>
+  </welcome-file-list>
+	<servlet>
+	  <servlet-name>weixin</servlet-name>
+	  <servlet-class>com.wechatservice.service.WeiXinServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+	  <servlet-name>weixin</servlet-name>
+	  <url-pattern>/wx</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+	  <servlet-name>login</servlet-name>
+	  <servlet-class>com.wechatservice.service.LoginService</servlet-class>
+	</servlet>
+	<servlet-mapping>
+	  <servlet-name>login</servlet-name>
+	  <url-pattern>/test</url-pattern>
+	</servlet-mapping>
+	
+		<servlet>  
+        <servlet-name>initServlet</servlet-name>  
+        <servlet-class>  
+            com.wechatservice.service.InitServlet  
+        </servlet-class>  
+        <!-- 配置获取access_token所需参数appid和appsecret -->  
+        <load-on-startup>0</load-on-startup>  
+    </servlet>
+  
+</web-app>
